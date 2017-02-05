@@ -96,6 +96,7 @@ class HTTPClient(object):
         socket = self.connect(parsedURL.hostname, parsedURL.port)
         socket.sendall(request)
         response = self.recvall(socket)
+        print(response)
         code = self.get_code(response)
         body = self.get_body(response)
 
@@ -111,6 +112,7 @@ class HTTPClient(object):
         socket = self.connect(parsedURL.hostname, parsedURL.port)
         socket.sendall(request)
         response = self.recvall(socket)
+        print(response)
         code = self.get_code(response)
         body = self.get_body(response)
         return HTTPResponse(code, body)
