@@ -51,7 +51,8 @@ class HTTPClient(object):
         return int(statusCode)
 
     def get_headers(self,data):
-        return None
+        headerData = data.split("\r\n\r\n")[0]
+        return headerData
 
     def get_body(self, data):
         bodyData = data.split("\r\n\r\n")[1]
